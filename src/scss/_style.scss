@@ -1,0 +1,140 @@
+$bg-header: #333333;
+$hover-link: #af0e00;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: $bg-header;
+}
+
+/* main-logo */
+.main-logo {
+    font-size: 28px;
+
+    &__link {
+        color: #ffffff;
+        text-decoration: none;
+        &:hover {
+            color: $hover-link;
+        }
+    }
+}
+
+/* main-navigation */
+.main-navigation {
+    list-style: none;
+
+    &__link {
+        display: block;
+        position: relative;
+        font-size: 14px;
+        color: #ffffff;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            color: $hover-link;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 0%;
+            height: 3px;
+            color: #fce38a;
+            background-color: $hover-link;
+            transition: 0.3s;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}
+
+/* hamburger */
+.hamburger {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    margin-left: 5PX;
+    background: none;
+    border: none;
+
+    &__element,
+    &__element::before,
+    &__element::after{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -1px;
+        width: 100%;
+        height: 4px;
+        background-color: #fff;
+        transition: 0.5s;
+    }
+
+    &__element{
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+        }
+
+        &::before {
+        transform: translateY(-12px);
+        }
+
+        &::after {
+            transform: translateY(10px);
+        }
+
+        &--active {
+            background-color: transparent;
+
+            &::before {
+                transform: translateY(-6px);
+                transform: rotate(35deg);
+                background-color: $hover-link;
+            }
+
+            &::after {
+                transform: translateY(6px);
+                transform: rotate(-35deg);
+                background-color: $hover-link;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+.footer {
+    background: $bg-header;
+    padding: 1vh 0;
+    font-size: 1.2rem;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    
+    p {
+        margin: 0;
+    }
+}
