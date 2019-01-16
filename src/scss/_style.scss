@@ -1,7 +1,14 @@
 $bg-header: #333333;
+$bg-section-grey: #f6f6f6;
 $hover-link: #af0e00;
 
 $main-font-family: 'ZCOOL QingKe HuangYou', cursive;
+$icon: 'foundation';
+
+body {
+    font-family: $main-font-family;
+}
+
 
 .visually-hidden {
   position: absolute;
@@ -14,6 +21,7 @@ $main-font-family: 'ZCOOL QingKe HuangYou', cursive;
 /* header */
 .header {
     display: flex;
+    min-height: 5vh;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -38,6 +46,7 @@ $main-font-family: 'ZCOOL QingKe HuangYou', cursive;
 /* main-navigation */
 
 .nav {
+    position: relative;
     display: flex;
 }
 
@@ -46,10 +55,6 @@ $main-font-family: 'ZCOOL QingKe HuangYou', cursive;
     list-style: none;
     margin: 0;
     padding: 0;
-    
-    @media #{$small-only} {
-        display: none;
-    }
 
     &__item {
         margin: 0 15px;
@@ -84,11 +89,23 @@ $main-font-family: 'ZCOOL QingKe HuangYou', cursive;
             width: 100%;
         }
     }
-      &--show{
-        @media #{$small-only} {
+
+    @media #{$small-only} {
+        display: none;
+        
+        &--show{
+            position: absolute;
+            top: 5vh;
+            right: 0;
             display: flex;
+            width: 40vw;
+            padding: 5vw;
             flex-direction: column;
+            background-color: $bg-header;
+            opacity: 0.8;
         }
+
+        
     }
 }
 
@@ -152,13 +169,277 @@ $main-font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 
 
+/* home */
+
+.home {
+    display: flex;
+    min-height: 95vh;
+    padding: 5vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: radial-gradient(rgba(0,0,0,0.65) 70%, rgba(255,255,255,0.2) 100%),
+                        url('../../images/bg-home.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: $main-font-family;
+    color: #ffffff;
+
+
+    &__title {
+        margin-bottom: 20px;
+        font-family: $main-font-family;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &__sub-title {
+        margin-bottom: 40px;
+        font-family: $main-font-family;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+/* services */
+
+.services {
+    display: flex;
+    padding: 85px 0;
+    flex-direction: column;
+    background-color: $bg-section-grey;
+    align-items: center;
+
+    &__title {
+        margin-bottom: 60px;
+        font-family: $main-font-family;
+        font-weight: 600;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        width: 90vw;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__item {
+        display: flex;
+        width: 30%;
+        padding: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 2px solid $hover-link;
+        background-color: #ffffff;
+        
+        img {
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-family: $main-font-family;
+            font-weight: 600;
+        }
+    }
+
+    @media #{$small-only} {
+        padding: 35px 0;
+
+        h2 {
+           margin-bottom: 20px;
+        }
+
+        &__list {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__item {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+}
+
+/* who-we-are */
+
+.about {
+    display: flex;
+    padding: 85px 0;
+    flex-direction: column;
+    align-items: center;
+    
+    h2 {
+        margin-bottom: 60px;
+        font-family: $main-font-family;
+        font-weight: 600;
+    }
+
+    &__container {
+        display: flex;
+        width: 90vw;
+        justify-content: center;
+    }
+
+    &__text,
+    &__image {
+        width: 40%;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        h4 {
+            font-family: $main-font-family;
+        }
 
 
 
+    }
 
+    @media #{$small-only} {
+        padding: 35px 0;
+
+        h2 {
+           margin-bottom: 20px;
+        }
+
+        &__container {
+            flex-direction: column;
+            align-items: center;
+
+            .button{
+                align-self: center;
+            }
+        }
+
+        &__text,
+        &__image {
+            width: 90%;
+        }
+    }
+}
+
+.contact {
+    display: flex;
+    padding: 85px 0;
+    flex-direction: column;
+    align-items: center;
+    background-color: $bg-section-grey;
+    
+    h2 {
+        margin-bottom: 60px;
+        font-family: $main-font-family;
+        font-weight: 600;
+    }
+
+    &__container {
+        display: flex;
+        width: 90vw;
+        justify-content: center;
+    }
+
+    &__address,
+    &__form {
+        width: 40%;
+    }
+
+    &__address {    
+        h3 {
+            font-family: $main-font-family;
+            font-weight: 600;
+        }
+
+        ul {
+            margin: 0;
+            list-style: none;
+
+            a {
+                font-weight: 600;
+            }
+            
+        }
+
+    }
+
+    @media #{$small-only} {
+        padding: 35px 0;
+        
+        h2 {
+           margin-bottom: 20px;
+        }
+
+        &__container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__address,
+        &__form {
+            width: 90%;
+        }
+
+        &__address {
+            margin-bottom: 20px;
+        } 
+    }
+}
+
+
+/* form */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &__group {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    &__input {
+        width: 49%;
+        margin-bottom: 15px;
+    }
+
+    &__textarea {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    input,
+    textarea {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    button {
+        border-radius: 0;
+    }
+
+    @media #{$small-only} {
+        align-items: center;
+
+        &__group {
+            flex-direction: column;
+        }
+
+        &__input {
+            width: 100%;
+        }
+    }
+
+}
+
+/* footer */
 
 .footer {
-    margin-top: 20px;
     background: $bg-header;
     padding: 1vh 0;
     font-family: $main-font-family;
@@ -166,8 +447,4 @@ $main-font-family: 'ZCOOL QingKe HuangYou', cursive;
     color: $white;
     display: flex;
     justify-content: center;
-    
-    p {
-        margin: 0;
-    }
 }

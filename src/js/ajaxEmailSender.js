@@ -22,7 +22,7 @@ supportEmail - site's support email(email to which form should be send)
             errorText: "Error! The email has not been sent. Please try later.",
             messageContainer: $("#formMessage"),
             errorColor: "red",
-            succesColor: "#ADFF2F",
+            succesColor: "#666666",
             submitBtn: $(this).find("[type='submit']"),
             event: "submit",
             autorizationToken: "",

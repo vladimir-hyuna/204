@@ -67,5 +67,5 @@ var getAddress = ({
     site: "emyela.net",
     corp_id: "550",
     country_code: "UK",
-    addressContainer: $('.addressContainer')
+    addressContainer: $('#addressContainer')
 });
